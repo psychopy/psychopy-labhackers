@@ -12,7 +12,7 @@ license = {text = "GNU General Public License v3 (GPLv3)"}
 authors = [
   { name = "Jon Peirce", email = "jon@opensceincetools.org" },
   { name = "Matthew Cutone", email = "mcutone@opensceincetools.org" },
-  { name = "Sol Simpson", email = "mcutone@opensceincetools.org" },
+  { name = "Sol Simpson", email = "sol@labhackers.com" },
 ]
 classifiers = [
   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -27,6 +27,8 @@ classifiers = [
 ]
 urls.homepage = "https://github.com/mdcutone/psychopy-labhackers"
 urls.changelog = "https://github.com/mdcutone/psychopy-labhackers/blob/main/CHANGELOG.txt"
+urls.documentation = "https://pages.github.com/psychopy/psychopy-labhackers"
+urls.repository = "https://github.com/psychopy/psychopy-labhackers"
 dependencies = [
   "pyserial",
 ]
