@@ -12,7 +12,7 @@ class MillikeyHIDButtonGroup(KeyboardButtonBox):
 
 class MillikeySerialButtonGroup(BaseButtonGroup):
     def __init__(self, port=None, channels=8):
-        BaseButtonGroup.__init__(self)
+        BaseButtonGroup.__init__(self, channels=channels)
         # get port if not given
         if port is None:
             profiles = self.getAvailableDevices()
