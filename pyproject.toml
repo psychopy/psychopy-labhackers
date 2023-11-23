@@ -35,3 +35,6 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["",]
+
+[project.entry-points."psychopy.experiment.components"]
+MillikeySerialButtonGroup = "psychopy_labhackers.components.millikey:MillikeySerialButtonGroup"
