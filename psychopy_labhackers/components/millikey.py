@@ -14,6 +14,7 @@ class MillikeySerialButtonBoxBackend(
         # define order
         order = [
             "millikeySerialPort",
+            "millikeyNButtons"
         ]
         # define params
         params = {}
@@ -29,10 +30,15 @@ class MillikeySerialButtonBoxBackend(
                 "Serial port to connect to"
             )
         )
-        # define depends
-        depends = []
+        self.params['millikeyNButtons'] = Param(
+            8, valType="code", inputType="single", categ="Device",
+            label=_translate("Num. buttons"),
+            hint=_translate(
+                "How many buttons this button box has."
+            )
+        )
 
-        return params, order, depends
+        return params, order
 
     def addRequirements(self: ButtonBoxComponent):
         self.exp.requireImport(
@@ -48,7 +54,7 @@ class MillikeySerialButtonBoxBackend(
             "    deviceClass='psychopy_labhackers.millikey.MillikeySerialButtonGroup',\n"
             "    deviceName=%(deviceName)s,\n"
             "    port=%(millikeySerialPort)s,\n"
-            "    channels=%(nButtons)s\n"
+            "    channels=%(millikeyNButtons)s\n"
             ")\n"
         )
         buff.writeOnceIndentedLines(code % inits)
@@ -71,19 +77,8 @@ class MillikeyHIDButtonBoxBackend(
                 "Keys to treat as buttons (in order of what button index you want them to be)."
             )
         )
-        # define depends
-        depends = []
-        depends.append(
-            {
-                "dependsOn": "deviceBackend",  # if...
-                "condition": f"== '{MillikeyHIDButtonBoxBackend.key}'",  # meets...
-                "param": "nButtons",  # then...
-                "true": "hide",  # should...
-                "false": "show",  # otherwise...
-            }
-        )
 
-        return params, order, depends
+        return params, order
 
     def addRequirements(self: ButtonBoxComponent):
         self.exp.requireImport(
