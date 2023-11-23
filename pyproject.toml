@@ -38,3 +38,4 @@ where = ["",]
 
 [project.entry-points."psychopy.experiment.components"]
 MillikeySerialButtonGroup = "psychopy_labhackers.components.millikey:MillikeySerialButtonGroup"
+MillikeyHIDButtonGroup = "psychopy_labhackers.components.millikey:MillikeyHIDButtonGroup"
