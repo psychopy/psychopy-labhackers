@@ -30,7 +30,7 @@ class MillikeySerialButtonBoxBackend(
                 "Serial port to connect to"
             )
         )
-        self.params['millikeyNButtons'] = Param(
+        params['millikeyNButtons'] = Param(
             8, valType="code", inputType="single", categ="Device",
             label=_translate("Num. buttons"),
             hint=_translate(
