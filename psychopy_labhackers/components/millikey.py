@@ -1,11 +1,11 @@
-from psychopy.experiment.components.buttonBox import (ButtonBoxBackend, KeyboardButtonBoxBackend,
+from psychopy.experiment.components.buttonBox import (DeviceBackend, KeyboardButtonBoxBackend,
                                                       ButtonBoxComponent)
 from psychopy.experiment import getInitVals, Param
 from psychopy.localization import _translate
 
 
 class MillikeySerialButtonBoxBackend(
-    ButtonBoxBackend, key="millikeySerial", label="Labhackers Millikey (Serial)"
+    DeviceBackend, key="millikeySerial", label="Labhackers Millikey (Serial)"
 ):
     """
     """
