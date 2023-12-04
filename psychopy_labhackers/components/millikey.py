@@ -53,7 +53,7 @@ class MillikeySerialButtonBoxBackend(DeviceBackend):
         code = (
             "deviceManager.addDevice(\n"
             "    deviceClass='psychopy_labhackers.millikey.MillikeySerialButtonGroup',\n"
-            "    deviceName=%(deviceName)s,\n"
+            "    deviceName=%(deviceLabel)s,\n"
             "    port=%(millikeySerialPort)s,\n"
             "    channels=%(millikeyNButtons)s\n"
             ")\n"
@@ -95,7 +95,7 @@ class MillikeyHIDButtonBoxBackend(KeyboardButtonBoxBackend):
         code = (
             "deviceManager.addDevice(\n"
             "    deviceClass='psychopy_labhackers.millikey.MillikeyHIDButtonGroup',\n"
-            "    deviceName=%(deviceName)s,\n"
+            "    deviceName=%(deviceLabel)s,\n"
             "    buttons=%(millikeyButtonAliases)s\n"
             ")\n"
         )
