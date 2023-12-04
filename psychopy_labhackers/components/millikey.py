@@ -4,11 +4,12 @@ from psychopy.experiment import getInitVals, Param
 from psychopy.localization import _translate
 
 
-class MillikeySerialButtonBoxBackend(
-    DeviceBackend, key="millikeySerial", label="Labhackers Millikey (Serial)"
-):
+class MillikeySerialButtonBoxBackend(DeviceBackend):
     """
     """
+    key = "millikeySerial"
+    label = "Labhackers Millikey (Serial)"
+    component = ButtonBoxComponent
 
     def getParams(self: ButtonBoxComponent):
         # define order
@@ -60,9 +61,11 @@ class MillikeySerialButtonBoxBackend(
         buff.writeOnceIndentedLines(code % inits)
 
 
-class MillikeyHIDButtonBoxBackend(
-    KeyboardButtonBoxBackend, key="millikeyHID", label="Labhackers Millikey (HID)"
-):
+class MillikeyHIDButtonBoxBackend(KeyboardButtonBoxBackend):
+    key = "millikeyHID"
+    label = "Labhackers Millikey (HID)"
+    component = ButtonBoxComponent
+
     def getParams(self: ButtonBoxComponent):
         # define order
         order = [
