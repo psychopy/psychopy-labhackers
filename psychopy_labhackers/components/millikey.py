@@ -10,6 +10,7 @@ class MillikeySerialButtonBoxBackend(DeviceBackend):
     key = "millikeySerial"
     label = "Labhackers Millikey (Serial)"
     component = ButtonBoxComponent
+    deviceClasses = ["psychopy_labhackers.millikey.MillikeySerialButtonGroup"]
 
     def getParams(self: ButtonBoxComponent):
         # define order
@@ -65,6 +66,7 @@ class MillikeyHIDButtonBoxBackend(KeyboardButtonBoxBackend):
     key = "millikeyHID"
     label = "Labhackers Millikey (HID)"
     component = ButtonBoxComponent
+    deviceClasses = ["psychopy_labhackers.millikey.MillikeyHIDButtonGroup"]
 
     def getParams(self: ButtonBoxComponent):
         # define order
