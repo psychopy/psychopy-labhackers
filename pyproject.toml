@@ -32,10 +32,26 @@ urls.repository = "https://github.com/psychopy/psychopy-labhackers"
 dependencies = [
   "pyserial",
 ]
+[project.optional-dependencies]
+# dependencies for building the docs
+docs = [
+  "psychopy",
+  "sphinx",
+  "furo",
+]
+# dependencies for running the test suite
+tests = [
+  "psychopy @ git+https://github.com/psychopy/psychopy@release",
+  "pytest",
+]
 
 [tool.setuptools.packages.find]
 where = ["",]
 
+[project.entry-points."psychopy.hardware"]
+MillikeySerialButtonGroup = "psychopy_labhackers.millikey:MillikeySerialButtonGroup"
+MillikeyHIDButtonGroup = "psychopy_labhackers.millikey:MillikeyHIDButtonGroup"
+
 [project.entry-points."psychopy.experiment.components"]
-MillikeySerialButtonGroup = "psychopy_labhackers.components.millikey:MillikeySerialButtonGroup"
-MillikeyHIDButtonGroup = "psychopy_labhackers.components.millikey:MillikeyHIDButtonGroup"
+MillikeySerialButtonBoxBackend = "psychopy_labhackers.components.millikey:MillikeySerialButtonBoxBackend"
+MillikeyHIDButtonBoxBackend = "psychopy_labhackers.components.millikey:MillikeyHIDButtonBoxBackend"
