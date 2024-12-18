@@ -22,7 +22,7 @@ class MillikeySerialButtonGroup(BaseButtonGroup):
         if port is None:
             raise ConnectionError("Could not detect any Millikey device. Try ")
         # setup serial
-        self.serial = sd.SerialDevice(port=port)
+        self.serial = sd.SerialDevice(port=port, baudrate=128000)
         # setup clock
         self.clock = core.Clock()
 
